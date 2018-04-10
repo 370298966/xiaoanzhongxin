@@ -1,0 +1,53 @@
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <!-- logo区域 -->
+  <view class="logo-container">
+    <view class="logo-box">
+      <image class="logo" src="{{logoSrc}}"></image>
+      <text class="logo-text">{{logoText}}</text>
+    </view>
+  </view>
+  <!-- 表单区域 -->
+  <view class="swiper-bar">
+    <view id="user" class="swiper-item" bindtap="swiperCut">
+      <text class="{{currentTab==0?'b-line':''}}">{{user_login}}{{acount}}</text>
+    </view>
+    <view class="v-line"></view>
+    <view id="phone" class="swiper-item" bindtap="swiperCut">
+      <text class="{{currentTab==1?'b-line':''}}">{{phone_login}}{{acount}}</text>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" bindchange="switchTab">
+    <!-- 用户名登录 -->
+    <swiper-item>
+      <form class="form" bindsubmit="userSubmit">
+        <view class="info">
+          <view class="info-wrap">
+            <input class="input" type="text" maxlength="11" bindinput="getUserNum" placeholder="请输入用户名" placeholder-class="placeholder"></input>
+          </view>
+          <view class="info-wrap">
+            <input class="input" type="password" bindinput="getPassword" placeholder="请输入密码" placeholder-class="placeholder"></input>
+          </view>
+        </view>
+        <button class="btn" form-type="submit">登录</button>
+      </form>
+    </swiper-item>
+    <!-- 手机号登录 -->
+    <swiper-item>
+      <form class="form" bindsubmit="submit">
+        <view class="info">
+          <view class="info-wrap">
+            <input class="input" type="number" maxlength="11" bindinput="getPhoneNum" placeholder="请输入手机号码"
+                   placeholder-class="placeholder"></input>
+            <image class="icon-wrong" src="../../images/icon/wrong.png" hidden="{{iconFlag}}"></image>
+          </view>
+          <view class="info-wrap">
+            <input class="input" bindinput="getMessageCode" placeholder="请输入短信验证码" placeholder-class="placeholder"></input>
+            <button class="message-code" disabled="{{flag}}" bindtap="getCode">{{codeText}}</button>
+          </view>
+        </view>
+        <button class="btn" form-type="submit" disabled="{{formFlag}}">登录</button>
+      </form>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,48 @@
+/* pages/pushPage/pushPage.wxss */
+page {
+  background: #e3e3e3;
+  position: relative;
+  overflow: hidden;
+}
+
+.push-page{
+  width: 100vw;
+  height: 100vh;
+}
+
+.msg-swiper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  transition: height 2s;
+}
+
+.text-area {
+  width: 660rpx;
+  height: 400rpx;
+  background: #fff;
+  margin: 40rpx auto;
+  padding: 40rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+
+.push-btn {
+  width: 700rpx;
+  height: 100rpx;
+  background: #00b5ea;
+  color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 40rpx;
+  line-height: 100rpx;
+}
+
+.push-btn-hover {
+  background: #03a5d6;
+}

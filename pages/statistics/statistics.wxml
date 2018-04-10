@@ -1,0 +1,27 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="table-box">
+    <view class="search-area">
+        <view class="search-box">
+            <input class="input-box" disabled="disabled" placeholder="{{placeholderText}}" placeholder-class="placeholder" bindtap="goSearchPage"></input>
+        </view>
+    </view>
+    <view class="table-area">
+        <view class="table-header">
+            <view class="table-header-items" wx:for="{{titleText}}" wx:key="titleText">{{titleText[index]}}</view>
+        </view>
+        <!--内容-->
+        <scroll-view class="table-con" scroll-y="true" bindscrolltolower="loadMore">
+            <view class="table-con-row" wx:for="{{stuMsg}}" wx:key="stuMsg">
+                <view class="table-con-row-items">
+                    <image class="table-con-row-items-img" src="https://www.cnxazx.com/{{stuMsg[index].student_face}}"></image>
+                </view>
+                <view class="table-con-row-items">
+                    <text>{{stuMsg[index].student_name}}</text>
+                </view>
+                <view class="table-con-row-items font-sz">
+                    <text class="status-color" id="{{stuMsg[index].id}}" bindtap="previewImage">{{stuMsg[index].signIn}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/stuMsg/stuMsg",
+    "pages/details/details",
+    "pages/stuDetails/stuDetails",
+    "pages/search/search",
+    "pages/scorePage/scorePage",
+    "pages/stuInfo/stuInfo",
+    "pages/massPage/massPage",
+    "pages/massContent/massContent",
+    "pages/sendMsg/sendMsg",
+    "pages/statistics/statistics",
+    "pages/pushPage/pushPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0E87E4",
+    "navigationBarTitleText": "校安管理",
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundColor": "#e3e3e3"
+  }
+}

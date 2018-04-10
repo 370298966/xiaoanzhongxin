@@ -1,0 +1,76 @@
+<!--pages/stuInfo/stuInfo.wxml-->
+<form class="formView" bindsubmit="submitForm">
+    <view class="container">
+        <view class="contain-box">
+            <view class="box-left">
+                <view class="box-left-items" wx:for="{{list}}" wx:key="listKey" wx:for-index="listIndex">
+                    <text class="text-box">{{list[listIndex]}}</text>
+                </view>
+            </view>
+            <!--信息详情-->
+            <view class="box-right">
+                <view class="box-right-items flex-style">
+                    <!--信息展示-->
+                    <view class="info-box">{{name}}</view>
+                    <!--信息录入-->
+                    <view class="operation-box">
+                        <button class="btn" id="name" bindtap="showModal">{{btnText}}</button>
+                    </view>
+                </view>
+                <view class="box-right-items flex-style">
+                    <!--信息展示-->
+                    <view class="info-box" value="">{{cardId}}</view>
+                    <!--信息录入-->
+                    <view class="operation-box">
+                        <button class="btn" id="cardId" bindtap="showModal">{{btnText}}</button>
+                    </view>
+                </view>
+                <view class="box-right-items flex-style">
+                    <!--信息展示-->
+                    <view class="info-box" value="">{{class_name}}</view>
+                    <!--信息录入-->
+                    <view class="operation-box">
+                        <button class="btn" id="period" bindtap="getClass">{{btnText}}</button>
+                    </view>
+                </view>
+                <view class="box-right-items flex-style">
+                    <!--信息展示-->
+                    <view class="info-box" value="">{{sexArray[sex-1]}}</view>
+                    <!--信息录入-->
+                    <view class="operation-box">
+                        <picker mode="selector" range="{{sexArray}}" value="{{pickerIndex}}" bindchange="getSex">
+                            <button class="btn" id="sex">{{btnText}}</button>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="contain-box">
+            <view class="box-left">
+                <text class="text-box">{{picture}}</text>
+            </view>
+            <view class="box-right flex-style">
+                <!--照片显示区域-->
+                <view class="img-box">
+                    <image class="img" mode="aspectFit" src="{{tempFilePaths[0]}}"></image>
+                </view>
+                <!--选取照片方式-->
+                <view class="opt-box">
+                    <button class="btn" bindtap="fromCamera">{{photograph}}</button>
+                    <button class="btn" bindtap="fromAlbum">{{album}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <button form-type="submit" class="submit-btn">{{preserve}}</button>
+    <!--输入框-->
+    <view class="input-box" hidden="{{flag}}">
+        <view class="input-box-item">
+            <input class="input-text" value="{{val}}" bindinput="getVal"></input>
+            <view class="btn-box">
+                <button class="btn" bindtap="cancelBtn">{{cancel}}</button>
+                <button class="btn" bindtap="preBtn">{{preserve}}</button>
+            </view>
+        </view>
+    </view>
+</form>

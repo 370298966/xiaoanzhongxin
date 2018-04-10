@@ -1,0 +1,4 @@
+/**app.wxss**/
+::-webkit-scrollbar{
+  display:none
+}

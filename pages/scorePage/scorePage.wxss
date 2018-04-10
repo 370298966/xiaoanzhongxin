@@ -1,0 +1,100 @@
+/* pages/scorePage/scorePage.wxss */
+page{
+  background: #e3e3e3;
+}
+.table-box{
+  width: 700rpx;
+  height: 100vh;
+  margin: 0 auto;
+}
+.search-area{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-flow: wrap nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.search-box{
+  width: 700rpx;
+  height: 60rpx;
+  display: flex;
+  flex-flow: wrap nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.input-box{
+  width: 600rpx;
+  height: 60rpx;
+  padding: 0 50rpx;
+  border-radius: 26rpx;
+  background: #F3F3F3;
+  font-family: "Microsoft Yahei";
+  font-size: 26rpx;
+  position: relative;
+}
+.placeholder-style{
+  position: absolute;
+  left: 274rpx;
+}
+/*表格区域  */
+.table-area{
+  background: #fff;
+}
+.table-header{
+  width: 700rpx;
+  height: 60rpx;
+  background: #CECECE;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.table-header-items{
+  width: 232rpx;
+  height: 60rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-right: 2rpx solid #FAFAFA;
+}
+.table-header-items:last-child{
+  border:none;
+}
+.table-con{
+  height: 86vh;
+}
+.table-con-row{
+  width: 700rpx;
+  height: 182rpx;
+  border-bottom: 2rpx solid #FAFAFA;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  line-height: 182rpx;
+  align-items: center;
+}
+.table-con-row-items{
+  width: 232rpx;
+  height: 182rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 182rpx;
+  border-right: 2rpx solid #FAFAFA;
+}
+.table-con-row-items:last-child{
+  border: none;
+}
+.table-con-row-items-img{
+  width: 96rpx;
+  height: 120rpx;
+  padding: 31rpx 41rpx;
+}
+.font-sz{
+  font-size: 30rpx;
+}
+.view-active:active{
+  color: #0E87E4
+}
+.view-active{
+  color: #0E87E4;
+}

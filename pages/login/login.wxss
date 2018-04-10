@@ -1,0 +1,120 @@
+/* pages/login/login.wxss */
+.container{
+    width: 100vm;
+    height: 100vh;
+}
+.logo-container{
+    width: 100vm;
+    height: 160rpx;
+    background-color: #0E87E4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logo-box{
+    width: 240rpx;
+    height: 120rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 83rpx;
+    height: 73rpx;
+    margin-bottom: 20rpx; 
+}
+.logo-text{
+    width: 240rpx;
+    height: 36rpx;
+    color: #fff;
+    line-height: 36rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.swiper-bar{
+  width: 600rpx;
+  height: 76rpx;
+  margin: 20rpx auto 0;
+  overflow: hidden;
+}
+.v-line{
+  width: 2rpx;
+  height: 38rpx;
+  float: left;
+  margin-top: 16rpx;
+  background: #0E87E4;
+}
+.b-line{
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #0E87E4;
+  color: #0E87E4;
+}
+.swiper-item{
+  width: 298rpx;
+  height: 70rpx;
+  background: #fff;
+  border-bottom: 6rpx;
+  float: left;
+  text-align: center;
+  line-height: 70rpx;
+}
+swiper{
+  height: 520rpx;
+}
+.info{
+    width: 600rpx;
+    padding-top: 20rpx;
+    margin: 0 auto;
+}
+.info-wrap{
+    width: 600rpx;
+    height: 80rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 4rpx solid #F0F0F0;
+    margin-bottom: 60rpx;
+    display: flex;
+    flex-flow: wrap nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.input{
+    height: 60rpx;
+    width: 380rpx;
+    font-size: 32rpx;
+}
+.message-code{
+    padding:0;
+    margin: 0;
+    width: 180rpx;
+    height: 80rpx;
+    background: linear-gradient(to right, #0E87E4 , #69BEFF);
+    color: #fff;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 80rpx;
+}
+.message-code::after{
+    border: none;
+}
+.icon-wrong{
+    width: 36rpx;
+    height: 36rpx;
+}
+.placeholder{
+    color:#ccc;
+    font-size: 32rpx;
+}
+.btn{
+    width: 600rpx;
+    height: 100rpx;
+    background: linear-gradient(to right, #69BEFF, #0E87E4 , #69BEFF);
+    color: #fff;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 100rpx;
+}
+.btn::after{
+    border: none;
+}

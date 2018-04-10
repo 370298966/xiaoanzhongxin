@@ -1,0 +1,177 @@
+/* pages/details/details.wxss */
+
+page {
+  background: #e3e3e3;
+  position: relative;
+}
+
+.contain {
+  margin: 0 auto;
+  padding-top: 20rpx;
+}
+
+.overflow-h{
+  overflow: hidden;
+}
+
+.contain-box {
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.row {
+  width: 700rpx;
+}
+
+.row-header {
+  height: 50rpx;
+  background: #cecece;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.row-con {
+  height: 74rpx;
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+/*无家长信息*/
+.row-con-box{
+  height: 74rpx;
+  background-color: #fff;
+  line-height: 74rpx;
+  text-align: center;
+}
+
+.item-msg {
+  width: 137rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 32rpx;
+  font-family: "Microsoft Yahei";
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.msg-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.phone-btn {
+  width: 120rpx;
+  height: 50rpx;
+  background: #00b5ea;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 24rpx !important;
+}
+
+.mid-line {
+  border-left: 2rpx solid #e3e3e3;
+  border-right: 2rpx solid #e3e3e3;
+}
+
+.btn-line {
+  border-bottom: 2rpx solid #e3e3e3;
+}
+
+.flex-gw {
+  flex-grow: 1;
+}
+
+.h-align {
+  text-align: center;
+}
+
+.v-align {
+  line-height: normal;
+}
+
+.v-align_b {
+  line-height: normal;
+}
+
+.no-record-box{
+  height: 130rpx;
+  line-height: 130rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.text-align{
+  text-align: center;
+}
+
+.font-sz {
+  font-size: 26rpx;
+}
+
+.time-size{
+  font-size: 22rpx;
+}
+
+.time-box {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #27c0ed;
+  padding-bottom: 6rpx;
+}
+
+.text-color {
+  color: #27c0ed;
+}
+
+.parent-name {
+  height: 74rpx;
+  line-height: 74rpx;
+}
+
+.card-box {
+  width: 700rpx;
+  margin: 20rpx auto;
+}
+
+.card-row {
+  min-height: 130rpx;
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  line-height: 130rpx;
+}
+
+/*照片层*/
+.pop-box{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
+.pop-box-image{
+  width: 100vw;
+  height: 450rpx;
+  background: #fff;
+} 
+.noscroll{
+  height: 100%;
+  overflow: hidden;
+}

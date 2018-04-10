@@ -1,0 +1,9 @@
+<!--pages/pushPage/pushPage.wxml-->
+<form class="push-page" bindsubmit="submit">
+    <view class="msg-swiper">
+        <textarea class="text-area" bindinput="bindInputValue" maxlength="-1" value="{{textareaValue}}"></textarea>
+        <view class="btn-box">
+            <button form-type="submit" report-submit="true" class="push-btn confirm-btn" hover-class="push-btn-hover">确认推送</button>
+        </view> 
+    </view>
+</form>

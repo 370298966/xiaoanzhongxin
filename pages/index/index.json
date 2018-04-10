@@ -1,0 +1,49 @@
+{
+  "homePageImg": [
+    "../../images/qw1.jpg"
+  ],
+  "schoolName": [
+    "../../images/schoolName.png"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0E87E4",
+    "navigationBarTitleText": "校安管理",
+    "navigationBarTextStyle": "#fff"
+  },
+  "number": {
+    "morNum": [
+      {
+        "classNum": "50"
+      },
+      {
+        "inNum": "49"
+      },
+      {
+        "outNum": "49"
+      }
+    ],
+    "nooNum": [
+      {
+        "classNum": "50"
+      },
+      {
+        "inNum": "49"
+      },
+      {
+        "outNum": "49"
+      }
+    ],
+    "eveNum": [
+      {
+        "classNum": "50"
+      },
+      {
+        "inNum": "49"
+      },
+      {
+        "outNum": "49"
+      }
+    ]
+  }
+}

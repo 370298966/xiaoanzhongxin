@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "学生信息",
+    "networkTimeout":{
+        "request":20000
+    }
+}

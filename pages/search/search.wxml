@@ -1,0 +1,20 @@
+<!--pages/seach/search.wxml-->
+<view class="search-area">
+  <view class="search-box">
+    <icon class="icon-search" size="14" type="search"></icon>
+    <input class="input-box" type="text" confirm-type="search" placeholder="{{placeholderText}}" bindinput="input1"></input>
+    <button class="submit" bindtap="search">{{searchText}}</button>
+  </view>
+</view>
+<view class="search-result" hidden="{{showOrHidden}}">
+  <!--表头-->
+    <view class="list-header">
+        <view class="list-header-items" wx:for="{{listHeaderText}}" wx:key="listKey">{{item}}</view>
+    </view>
+    <view class="search-item" wx:for="{{searchResult}}" wx:key="searchResult">
+        <image class="search-item-img" src="https://www.cnxazx.com/{{searchResult[index].student_face}}" mode="aspectFit"></image>
+        <view class="search-item-name">{{searchResult[index].student_name}}</view>
+        <view class="search-item-status {{searchResult[index].legal_flag==1?'green':'red'}}">{{searchResult[index].legal_flag==1?hasOpened:notOpened}}</view>
+        <view class="search-item-details" data-stu-obj="{{searchResult[index]}}" bindtap="goPage">{{pageUrl=="details"?text1:text2}}</view>
+    </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/scorePage/scorePage.wxml-->
+<view class="table-box">
+    <view class="search-area">
+        <view class="search-box">
+            <input class="input-box" placeholder="{{placeholderText}}" disabled="disabled" placeholder-class="placeholder-style" data-search-page="stuDetails" bindtap="goSearchPage"></input>
+        </view>
+    </view>
+    <view class="table-area">
+        <view class="table-header">
+            <view class="table-header-items" wx:for="{{listText}}" wx:key="listKey" wx:for-index="listTextIndex">{{listText[listTextIndex]}}</view>
+        </view>
+        <!--内容-->
+        <scroll-view class="table-con" scroll-y="true" bindscrolltolower="loadMore">
+            <view class="table-con-row" wx:for="{{stuMsg}}" wx:key="stuKey" wx:for-index="stuMsgIndex">
+                <view class="table-con-row-items">
+                    <image class="table-con-row-items-img" src="https://www.cnxazx.com/{{stuMsg[stuMsgIndex].student_face}}"></image>
+                </view>
+                <view class="table-con-row-items">
+                    <text>{{stuMsg[stuMsgIndex].student_name}}</text>
+                </view>
+                <view class="table-con-row-items font-sz">
+                    <text class="view-active" data-stu-obj="{{stuMsg[stuMsgIndex]}}" bindtap="goStuDetails">{{detailsText}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

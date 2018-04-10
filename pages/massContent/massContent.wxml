@@ -1,0 +1,11 @@
+<!--pages/massContent/massContent.wxml-->
+<!--简讯详情展示页面-->
+<view class="container">
+    <view class="title-box">
+        <text class="title-text">{{msgItem.homework_date}}{{text}}</text>
+    </view>
+    <scroll-view class="content-box" scroll-y="true">
+        <text class="text-box">{{msgItem.content}}</text>
+        <image class="img-item" id="{{index}}" wx:for="{{imgUrl}}" wx:key="img" wx:for-index="index" class="image-box" src="{{imgUrl[index]}}" bindtap="previewImg"></image>
+    </scroll-view>
+</view>

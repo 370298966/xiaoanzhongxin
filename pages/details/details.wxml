@@ -1,0 +1,72 @@
+<!--pages/details/details.wxml-->
+<view class="contain {{noscroll?'overflow-h':''}}">
+    <view class="contain-box">
+        <!--学生姓名-->
+        <view class="row">
+            <view class="row-header">
+                <view class="item-msg">{{stuNameTitle}}</view>
+                <view class="item-msg mid-line">{{shcoolNameTile}}</view>
+                <view class="item-msg flex-gw">{{pro}}</view>
+            </view>
+            <view class="row-con">
+                <view class="item-msg v-align font-sz">{{stuData.student_name}}</view>
+                <view class="item-msg mid-line v-align font-sz">{{stuData.school_name}}</view>
+                <view class="item-msg flex-gw v-align font-sz">{{stuData.class_name}}</view>
+            </view>
+        </view>
+        <!--家长姓名-->
+        <view class="row">
+            <view class="row-header">
+                <view class="item-msg">{{parentName}}</view>
+                <view class="item-msg mid-line">{{relationship}}</view>
+                <view class="item-msg flex-gw">{{contactInfo}}</view>
+            </view>
+            <!--家长信息-->
+            <view class="row-con-box btn-line font-sz" wx:if="{{studentParents.length==0}}">
+                <text>{{noRecord[1]}}</text>
+            </view>
+            <view class="row-con btn-line" wx:for="{{studentParents}}" wx:key="studentParents" wx:for-index="Index">
+                <view class="item-msg v-align font-sz">{{studentParents[Index].user_name}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:if="{{studentParents[Index].relation==1}}">{{relationType[0]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:elif="{{studentParents[Index].relation==2}}">{{relationType[1]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:elif="{{studentParents[Index].relation==3}}">{{relationType[2]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:elif="{{studentParents[Index].relation==4}}">{{relationType[3]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:elif="{{studentParents[Index].relation==5}}">{{relationType[4]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:elif="{{studentParents[Index].relation==6}}">{{relationType[5]}}</view>
+                <view class="item-msg mid-line v-align font-sz" wx:else="{{studentParents[Index].relation==7}}">{{relationType[6]}}</view>
+                <view class="item-msg flex-gw v-align font-sz msg-box">
+                    <text class="phone-num">{{studentParents[Index].phone}}</text>
+                    <view class="phone-btn" data-parents-info="{{studentParents[Index]}}" bindtap="gotoPushPage">消息推送</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--打卡日期-->
+<view class="card-box">
+    <view class="row-header">
+        <view class="item-msg align">{{date}}</view>
+        <view class="item-msg mid-line align">{{inTime}}</view>
+        <view class="item-msg align">{{outTime}}</view>
+        <view class="item-msg mid-line align">{{signIn}}</view>
+    </view>
+    <view class="no-record-box btn-line font-sz" wx:if="{{checkinList.length==0}}">
+        <text>{{noRecord[0]}}</text>
+    </view>
+    <view class="card-row btn-line" wx:for="{{checkinList}}" wx:key="checkinList" wx:for-index="index">
+        <view class="item-msg font-sz v-align_b time-size">{{checkinList[index].create_time}}</view>
+        <view class="item-msg mid-line font-sz v-align_b">
+            <text class="time-box" wx:for="{{checkinList[index].in_checkin_time}}" wx:for-index="checkinIndex" wx:key="inCheckinList" data-checkin-id="{{checkinList[index].in_checkin_time[checkinIndex].checkin_id}}" catchtap="previewImg">{{checkinList[index].in_checkin_time[checkinIndex].checkin_time}}</text>
+        </view>
+        <view class="item-msg font-sz v-align_b">
+            <text class="time-box" wx:for="{{checkinList[index].out_checkin_time}}" wx:for-index="outIndex" wx:key="timeKey" data-checkin-id="{{checkinList[index].out_checkin_time[outIndex].checkin_id}}" catchtap="previewImg">{{checkinList[index].out_checkin_time[outIndex].checkin_time}}</text>
+        </view>
+        <view class="item-msg mid-line font-sz v-align_b h-align text-color" >
+            <text class="time-box" wx:for="{{checkinList[index].class_checkin_list}}" wx:for-index="classIndex" wx:key="classKey" data-checkin-id="{{checkinList[index].class_checkin_list[classIndex].checkin_id}}" catchtap="previewImg">{{checkinList[index].class_checkin_list[classIndex].checkin_time}}</text>
+        </view>
+    </view>
+</view>
+<!--预览图片pop层-->
+<cover-view class="pop-box" hidden="{{showImage}}" bindtap="previewImg">
+    <cover-image class="pop-box-image" src="{{imgUrl}}"></cover-image>
+</cover-view>

@@ -1,0 +1,78 @@
+<!--pages/stuDetails/stuDetails.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="header-title">
+            <view class="header-title-items" wx:for="{{headerTitleText}}" wx:key="titleTextKey" wx:for-index="TitleTextIndex">{{headerTitleText[TitleTextIndex]}}</view>
+        </view>
+        <view class="header-con">
+            <view class="header-con-items font-sz">{{stuData.student_name}}</view>
+            <view class="header-con-items font-sz">{{stuData.school_name}}</view>
+            <view class="header-con-items font-sz">{{stuData.class_name}}</view>
+        </view>
+    </view>
+    <!--成绩录入区域-->
+    <form bindsubmit="submitForm">
+        <view class="session">
+            <view class="session-header">
+                <view class="session-header-items item-subject">{{headerTitleTextB[0]}}</view>
+                <view class="session-header-items item-score">{{headerTitleTextB[1]}}</view>
+                <view class="session-header-items flex-gw">
+                    <input id="term" class="input-box" type="text" placeholder="请填写考试类型" placeholder-class="placeholder-text" bindinput="getSemester"></input>
+                </view>
+            </view>
+            <view class="session-con">
+                <!--动态添加-->
+                <view class="session-con-row" wx:for="{{addSubject}}" wx:key="addSubject" wx:for-index="addIndex">
+                    <view class="session-con-row-items item-subject" wx:if="{{addSubject[addIndex].score_type==0}}">{{scoreType[0]}}</view>
+                    <view class="session-con-row-items item-subject" wx:if="{{addSubject[addIndex].score_type==1}}">{{scoreType[1]}}</view>
+                    <view class="session-con-row-items item-subject" wx:if="{{addSubject[addIndex].score_type==2}}">{{scoreType[2]}}</view>
+                    <view class="session-con-row-items item-subject" wx:if="{{addSubject[addIndex].score_type==3}}">{{scoreType[3]}}</view>
+                    <view class="session-con-row-items item-subject" wx:if="{{addSubject[addIndex].score_type==4}}">{{scoreType[4]}}</view>
+                    <view class="session-con-row-items item-score">
+                        <input id="{{addIndex}}" class="score-input" type="digit" maxlength="6" placeholder-class="plaeceholder" placeholder="输入" bindinput="getValue"></input>
+                    </view>
+                    <view class="session-con-row-items flex-gw btn-box">
+                        <button id="{{addIndex}}" class="btn btn-position" wx:if="{{showOrHide}}" bindtap="delSubject">{{deleteText}}</button>
+                    </view>
+                </view>
+            </view>
+            <view class="session-footer">
+                <view class="add-view">
+                    <picker mode="selector" range="{{scoreType}}" value="{{pickerIndex}}" bindchange="addSubject">
+                        <button class="btn">{{addText}}</button>
+                    </picker>
+                </view>
+                <view class="submit-view">
+                    <button formType="submit" class="btn">{{submit}}</button>
+                </view>
+            </view>
+        </view>
+    </form>
+    <!--信息展示区域-->
+    <block wx:if="{{scoreList}}">
+        <view class="footer">
+            <view class="session-header">
+                <view class="session-header-items item-subject">{{headerTitleTextB[0]}}</view>
+                <view class="session-header-items item-score">{{headerTitleTextB[1]}}</view>
+                <view class="session-header-items flex-gw">{{headerTitleText[2]}}</view>
+            </view>
+            <block wx:for="{{scoreList}}" wx:key="scoreLsit">
+                <view class="session-con">
+                    <view class="session-con-row" bindtouchmove="rowMove">
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==0}}">{{scoreType[0]}}</view>
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==1}}">{{scoreType[1]}}</view>
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==2}}">{{scoreType[2]}}</view>
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==3}}">{{scoreType[3]}}</view>
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==4}}">{{scoreType[4]}}</view>
+                        <view class="session-con-row-items item-subject" wx:if="{{scoreList[index].score_type==5}}">{{scoreType[5]}}</view>
+                        <view class="session-con-row-items item-score">{{scoreList[index].score}}</view>
+                        <view class="session-con-row-items flex-gw">{{scoreList[index].semester}}</view>
+                        <view class="remove">
+                            <image class="delete-icon" src="../../images/icon/delete.png" data-score-item="{{scoreList[index]}}" bindtap="deleteScore"></image>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</view>

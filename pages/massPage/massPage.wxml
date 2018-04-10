@@ -1,0 +1,15 @@
+<!--pages/MassPage/MassPage.wxml-->
+<view class="container-box">
+  <scroll-view class="container" scroll-y="true" bindscrolltolower="loadMore">
+      <view class="row-item"  wx:for="{{messageLogs}}" wx:key="messageLogsKey" wx:for-index="logsIndex" data-msg-obj="{{messageLogs[logsIndex]}}" bindtap="goMassContent">
+          <view class="time-box">{{messageLogs[logsIndex].homework_date}}{{messageText}}</view>
+          <view class="content-box">
+              <text class="text-box">{{messageLogs[logsIndex].content}}</text>
+              <icon class="my-iconfont"></icon>
+          </view>
+      </view>
+  </scroll-view>
+  <view class="btn-box">
+      <button class="btn" bindtap="showMenu">{{sendText}}</button>
+  </view>
+</view>

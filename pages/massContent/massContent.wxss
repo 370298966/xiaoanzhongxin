@@ -1,0 +1,44 @@
+/* pages/massContent/massContent.wxss */
+page{
+  background: #e3e3e3;
+}
+.container{
+  width: 700rpx;
+  margin: 0 auto;
+  background: #fff;
+  margin-top: 40rpx;
+}
+.title-box{
+  height: 60rpx;
+  background: #CECECE;
+  text-align: center;
+  line-height: 60rpx;
+  align-items: center;
+}
+.title-text{
+  font-size: 32rpx;
+}
+.content-box{
+  width: 700rpx;
+  height: 86vh;
+  background: #fff;
+}
+.text-box{
+  display: block;
+  width: 660rpx;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #7E7E7E;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.image-box{
+  max-width: auto;
+  max-height: auto;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.img-item{
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+}

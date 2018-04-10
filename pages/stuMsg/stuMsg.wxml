@@ -1,0 +1,25 @@
+<!--pages/stuMsg/stuMsg.wxml-->
+<view class="container">
+  <view class="search-area">
+    <view class="search-box">
+      <input class="input-box" placeholder="搜索" data-search-page="details" bindtap="goSearchPage" placeholder-class="placeholder-style" disabled="true"></input>
+    </view>
+  </view>
+  <view class="list-container">
+    <view class="list-box">
+      <!--表头-->
+      <view class="list-header">
+        <view class="list-header-items" wx:for="{{listHeaderText}}" wx:key="listKey">{{item}}</view>
+      </view>
+      <!--表格内容-->
+      <scroll-view class="list-con" scroll-y="true" bindscrolltolower="loadMore">
+        <view class="msg-item" wx:for="{{stuMsg}}" wx:key="stuMsgKey">
+          <image class="msg-item-img" src="https://www.cnxazx.com/{{stuMsg[index].student_face}}" mode="aspectFit"></image>
+          <view class="msg-item-name">{{stuMsg[index].student_name}}</view>
+          <view class="msg-item-status {{stuMsg[index].legal_flag==1?'green':'red'}}">{{stuMsg[index].legal_flag==1?hasOpened:notOpened}}</view>
+          <view class="msg-item-details" data-stu-obj="{{stuMsg[index]}}" catchtap="goPage">{{detailsText}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

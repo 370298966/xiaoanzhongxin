@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="header">
+    <view class="header-con">
+        <view class="text-area">
+            <text class="text-box">{{teacherName}}{{hello}}</text>
+        </view>
+          <view class="table-box">
+              <!--早晨-->
+              <view class="table-row table-row-blue shadow-first">
+                  <view class="tablt-row-item1">{{tableText[0]}}</view>
+                  <view class="tablt-row-item2">{{tableText[3]}}</view>
+                  <view class="tablt-row-item2 overlap">{{tableText[4]}}</view>
+                  <view class="tablt-row-item1 clear-border">{{tableText[5]}}</view>
+              </view>
+              <view class="table-row table-row-white">
+                  <view class="tablt-row-item1"></view>
+                  <view class="tablt-row-item2">{{classTotalNum}}</view>
+                  <view class="tablt-row-item2 overlap text-color">{{inNum[0].morning}}</view>
+                  <view class="tablt-row-item1 clear-border text-color">{{outNum[0].morning}}</view>
+              </view>
+              <!--下午-->
+              <view class="table-row table-row-blue">
+                  <view class="tablt-row-item1">{{tableText[1]}}</view>
+                  <view class="tablt-row-item2">{{tableText[3]}}</view>
+                  <view class="tablt-row-item2 overlap">{{tableText[4]}}</view>
+                  <view class="tablt-row-item1 clear-border">{{tableText[5]}}</view>
+              </view>
+              <view class="table-row table-row-white">
+                  <view class="tablt-row-item1"></view>
+                  <view class="tablt-row-item2">{{classTotalNum}}</view>
+                  <view class="tablt-row-item2 overlap text-color">{{inNum[1].afternoon}}</view>
+                  <view class="tablt-row-item1 clear-border text-color">{{outNum[1].afternoon}}</view>
+              </view>
+              <!--晚上-->
+              <view class="table-row table-row-blue">
+                  <view class="tablt-row-item1">{{tableText[2]}}</view>
+                  <view class="tablt-row-item2">{{tableText[3]}}</view>
+                  <view class="tablt-row-item2 overlap">{{tableText[4]}}</view>
+                  <view class="tablt-row-item1 clear-border">{{tableText[5]}}</view>
+              </view>
+              <view class="table-row table-row-white shadow-last">
+                  <view class="tablt-row-item1"></view>
+                  <view class="tablt-row-item2">{{classTotalNum}}</view>
+                  <view class="tablt-row-item2 overlap text-color">{{inNum[2].evening}}</view>
+                  <view class="tablt-row-item1 clear-border text-color">{{outNum[2].evening}}</view>
+              </view>
+              <!--盒子阴影效果-->
+              <view class="shadow-box" bindtap="getData"></view>
+          </view>
+    </view>
+</view>
+<!--functional area-->
+<view class="flex-box">
+<!--container box-->
+    <view class="con-box">
+        <view class="row">
+            <!--学生信息-->
+            <view class="row-item item-border line" bindtap="goStuMsgPage">
+                <image class="fun-logo" src='{{funLogo[0]}}'></image>
+                <text class="fun-text">{{text[0]}}</text>
+            </view>
+            <!--学生成绩-->
+            <view class="row-item line" bindtap="goScorePage">
+                <image class="fun-logo" src='{{funLogo[1]}}'></image>
+                <text class="fun-text">{{text[1]}}</text>            
+            </view>
+        </view>
+        <view class="row">
+            <!--微信群发-->
+            <view class="row-item item-border" bindtap="goMassPage">
+                <image class="fun-logo" src='{{funLogo[2]}}'></image>
+                <text class="fun-text">{{text[2]}}</text>  
+            </view>
+            <!--学生录入-->
+            <view id="chQ" class="row-item" bindtap="goStuInfo">
+                <image class="fun-logo" src='{{funLogo[3]}}'></image>
+                <text class="fun-text">{{text[3]}}</text>  
+            </view>
+        </view>
+    </view>
+</view>

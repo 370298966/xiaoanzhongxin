@@ -1,0 +1,41 @@
+<!--pages/sendMsg/sendMsg.wxml-->
+<!--简讯内容填写-->
+<form bindsubmit="submitForm">
+    <view class="container">
+        <scroll-view class="input-box" scroll-y="true">
+            <textarea maxlength="-1" placeholder="{{placeholderText}}" bindinput="changeTextarea" bindfocus="bindFocus" value="{{info}}"></textarea>
+        </scroll-view>
+        <view class="image-box">
+            <view wx:for="{{imgUrl}}" wx:key="imgUrl">
+                <image class="img-item" src="{{imgUrl[index]}}" mode="aspectFill" bindlongpress="clearImg" />
+            </view>
+            <view class="camera-btn" bindtap="chooseImg">
+                <image src="../../images/icon/camera.png"></image>
+                <text>照片/拍照</text>
+            </view>
+        </view>
+        <view class="voice-box">
+            <view class="voice-box-con" bindtap="showVoiceBtn">
+                <image src="../../images/icon/voice.png"></image>
+                <text>语音消息</text>
+            </view>
+            <!-- <image class="icon-image" src="{{voiceIcon}}" catchtouchstart="vChangeColor" catchtouchend="vRecover" /> -->
+            <view class="record" id="{{index}}" wx:for="{{voices}}" wx:key="voices" wx:for-index="index" bindlongpress="deleteVoice" bindtap="playVoice">{{playVoice}}{{index+1}}</view>
+        </view>
+    </view>
+    <view class="btn-box">
+        <button class="btn" form-type="submit">{{btnText}}</button>
+    </view>
+</form>
+<!--语音帧动画-->
+<block >
+  <view class="speak-box" hidden="{{flag}}">
+      <button class="speak-style" bindtouchstart="startRecord" bindtouchend="stopRecord">
+          <text wx:if="{{j==0}}">按住说话</text>
+          <image wx:if="{{j==1}}" class="speak-items" src="../../images/icon/voice_icon_1.png"></image>
+          <image wx:if="{{j==2}}" class="speak-items" src="../../images/icon/voice_icon_2.png"></image>
+          <image wx:if="{{j==3}}" class="speak-items" src="../../images/icon/voice_icon_3.png"></image>
+          <image wx:if="{{j==4}}" class="speak-items" src="../../images/icon/voice_icon_4.png"></image>
+      </button>
+  </view>
+</block>
